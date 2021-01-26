@@ -5,24 +5,25 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <title>Slider</title>
     </head>
     <body>
         <div class="container">
-            <div class="slider-wrapper">
+            <div   class="slider-wrapper">
                 <div @click="prev" class="prev">
                     <i class="fas fa-angle-left"></i>
                 </div>
                 <div class="images">
                     <img :src="img[counter]" alt="">
                 </div>
-                <div v-on:keyup.39 @click="next" class="next">
+                <div @click="next" class="next">
                     <i class="fas fa-angle-right"></i>
                 </div>
                 <div class="nav">
-                 <i v-for="(img,index) in img" class="fas fa-circle" @click="counter=index" :class="(index == counter) ? 'checked':''"></i>
-
+                 <i v-for="(img,index) in img" class="fas fa-circle" @click="click(index)" :class="(index == counter) ? 'checked':''"></i>
+                
                 </div>
             </div>
         </div>
